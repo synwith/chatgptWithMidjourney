@@ -299,8 +299,9 @@ export const useChatStore = create<ChatStore>()(
         let op = "";
         if (lastMessage.content.startsWith("/mj")) {
           console.log(">>> 绘图模式 <<<");
-          // 请求API
+         
           if (lastMessage.content.startsWith("/mj UPSCALE")) {
+               console.log(">>> 绘图模式11 <<<");
             let ops = lastMessage.content.split("|");
             op = "UPSCALE";
             res = await requestImage(
@@ -311,6 +312,7 @@ export const useChatStore = create<ChatStore>()(
               ops[1],
             );
           } else if (lastMessage.content.startsWith("/mj VARIATION")) {
+               console.log(">>> 绘图模式12 <<<");
             let ops = lastMessage.content.split("|");
             op = "VARIATION";
             res = await requestImage(
@@ -321,6 +323,7 @@ export const useChatStore = create<ChatStore>()(
               ops[1],
             );
           } else if (lastMessage.content.startsWith("/mj RESET")) {
+                  console.log(">>> 绘图模式13 <<<");
             let ops = lastMessage.content.split("|");
             op = "RESET";
             res = await requestImage(
@@ -331,6 +334,7 @@ export const useChatStore = create<ChatStore>()(
               ops[1],
             );
           } else {
+               console.log(">>> 绘图模式14 <<<");
             res = await requestImage("CREATE_IMAGE", true, lastMessage.content);
           }
 
