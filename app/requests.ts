@@ -146,6 +146,7 @@ export async function requestImage(
     });
 
     const res = await requestMidjourney("/v1/request")(req);
+    console.info("Info:", res);
     return res.json();
     // handle the response here, for example:
   } catch (error) {
