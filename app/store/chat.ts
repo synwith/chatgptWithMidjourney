@@ -554,10 +554,12 @@ export const useChatStore = create<ChatStore>()(
             requestWithPrompt(session.messages, Locale.Store.Prompt.Topic, {
               model: "gpt-3.5-turbo",
             }).then((res) => {
+                  console.log(">>> 绘图模式1 <<<");
               get().updateCurrentSession(
                 (session) =>
                 (session.topic = res ? `${trimTopic(res)}` : DEFAULT_TOPIC),
               );
+                 console.log(">>> 绘图模式2 <<<");
             });
           }
         }
