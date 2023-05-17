@@ -556,7 +556,7 @@ export const useChatStore = create<ChatStore>()(
             }).then((res) => {
               get().updateCurrentSession(
                 (session) =>
-                  (session.topic = res ? trimTopic(res) : DEFAULT_TOPIC),
+                (session.topic = res ? `${trimTopic(res)}` : DEFAULT_TOPIC),
               );
             });
           }
