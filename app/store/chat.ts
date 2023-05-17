@@ -336,6 +336,7 @@ export const useChatStore = create<ChatStore>()(
           } else {
                console.log(">>> 绘图模式14 <<<");
             res = await requestImage("CREATE_IMAGE", true, lastMessage.content);
+                console.log(">>> 绘图模式15 <<<");
           }
 
           let hisMsg = new Array();
